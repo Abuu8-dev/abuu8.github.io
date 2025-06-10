@@ -1,185 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Adam's Creative Hub</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
-  body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
-    color: #f0f0f0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-  header {
-    text-align: center;
-    padding: 4rem 1rem 2rem;
-    background: rgba(0,0,0,0.3);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  }
-  header h1 {
-    font-weight: 600;
-    font-size: 3rem;
-    margin: 0;
-    letter-spacing: 0.1em;
-    animation: fadeInDown 1s ease forwards;
-  }
-  header p {
-    margin: 0.5rem 0 0;
-    font-weight: 300;
-    font-size: 1.3rem;
-    letter-spacing: 0.05em;
-    animation: fadeInDown 1.3s ease forwards;
-  }
-  main {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 3rem 1rem;
-    gap: 2rem;
-  }
-  .btn-group {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.5rem;
-  }
-  a.button {
-    background: #ff5c5c;
-    color: white;
-    padding: 1rem 2rem;
-    border-radius: 50px;
-    font-weight: 600;
-    text-decoration: none;
-    box-shadow: 0 6px 15px rgba(255,92,92,0.5);
-    transition: background 0.3s ease, transform 0.2s ease;
-    min-width: 200px;
-    text-align: center;
-  }
-  a.button:hover {
-    background: #ff1f1f;
-    transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(255,31,31,0.7);
-  }
-  form {
-    background: rgba(0,0,0,0.25);
-    padding: 1.5rem 2rem;
-    border-radius: 15px;
-    max-width: 400px;
-    width: 100%;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
-    animation: fadeInUp 1.5s ease forwards;
-  }
-  form h2 {
-    margin-top: 0;
-    margin-bottom: 1rem;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    color: #ffb3b3;
-  }
-  form label {
-    display: block;
-    margin-bottom: 0.25rem;
-    font-weight: 500;
-    font-size: 0.9rem;
-  }
-  form input, form textarea {
-    width: 100%;
-    padding: 0.6rem 1rem;
-    margin-bottom: 1rem;
-    border: none;
-    border-radius: 10px;
-    font-size: 1rem;
-  }
-  form textarea {
-    resize: vertical;
-    min-height: 100px;
-  }
-  form button {
-    background: #ff5c5c;
-    color: white;
-    padding: 0.8rem 1.5rem;
-    border: none;
-    border-radius: 50px;
-    font-weight: 600;
-    cursor: pointer;
-    width: 100%;
-    font-size: 1.1rem;
-    transition: background 0.3s ease;
-  }
-  form button:hover {
-    background: #ff1f1f;
-  }
-  footer {
-    text-align: center;
-    padding: 1rem;
-    background: rgba(0,0,0,0.2);
-    font-size: 0.85rem;
-    color: #bbb;
-  }
-  @keyframes fadeInDown {
-    0% { opacity: 0; transform: translateY(-20px); }
-    100% { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes fadeInUp {
-    0% { opacity: 0; transform: translateY(20px); }
-    100% { opacity: 1; transform: translateY(0); }
-  }
-  @media (max-width: 480px) {
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abuu8 | Digital Creator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Outfit', sans-serif;
+    }
+    body {
+      background: radial-gradient(circle at top left, #1a1a2e, #16213e);
+      color: #eaeaea;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+      animation: fadeDrop 1.2s ease-in-out;
+    }
     header h1 {
-      font-size: 2.2rem;
+      font-size: 3.5rem;
+      color: #ffffff;
+      margin-bottom: 0.3rem;
     }
-    a.button {
-      min-width: 150px;
-      padding: 0.8rem 1.5rem;
-      font-size: 0.95rem;
+    header p {
+      font-size: 1.2rem;
+      color: #a8acc9;
     }
-  }
-</style>
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 2rem;
+      width: 100%;
+      max-width: 500px;
+      animation: floatIn 1.4s ease-in-out;
+    }
+    .buttons a {
+      background: linear-gradient(to right, #23243a, #2e2f4b);
+      color: #ffffff;
+      text-decoration: none;
+      padding: 1rem;
+      border-radius: 12px;
+      text-align: center;
+      border: 1px solid #454668;
+      transition: all 0.3s ease;
+    }
+    .buttons a:hover {
+      background: #3b3c5f;
+      transform: scale(1.06);
+    }
+    form {
+      margin-top: 3rem;
+      width: 100%;
+      max-width: 500px;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      animation: fadeDrop 1.3s ease-in-out;
+    }
+    form input, form textarea {
+      padding: 0.9rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+    form button {
+      padding: 1rem;
+      border: none;
+      background-color: #f72585;
+      color: #fff;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    form button:hover {
+      background-color: #ff4da6;
+    }
+    @keyframes fadeDrop {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes floatIn {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
+
 <body>
+  <header>
+    <h1>Abuu8</h1>
+    <p>Creator of bold, sharp digital experiences.</p>
+  </header>
 
-<header>
-  <h1>Hey, I’m Adam</h1>
-  <p>ebooks, clothing designs, creative projects & more</p>
-</header>
-
-<main>
-  <div class="btn-group">
-    <a href="https://timecapsuleofbooks.com" class="button" target="_blank" rel="noopener noreferrer">My Ebooks</a>
-    <a href="https://egojourney.com" class="button" target="_blank" rel="noopener noreferrer">Clothing Shop</a>
-    <a href="https://youtube.com/Abuu8" class="button" target="_blank" rel="noopener noreferrer">YouTube Channel</a>
+  <div class="buttons">
+    <a href="https://www.youtube.com/@Abuu8" target="_blank">📺 YouTube - Abuu8</a>
+    <a href="https://www.tiktok.com/@pizzahutu" target="_blank">🎵 TikTok - pizzahutu</a>
+    <a href="https://egojourney.com" target="_blank">🧠 Clothing Brand - EgoJourney</a>
+    <a href="https://timecapsuleofbooks.com" target="_blank">📚 Ebook Store - Time Capsule of Books</a>
+    <a href="mailto:aabuelawi4@email.com">✉️ Email Me</a>
   </div>
 
-  <form id="contactForm">
-    <h2>Get In Touch</h2>
-    <label for="Adam">Name</label>
-    <input id="name" name="name" type="text" required placeholder="Your name" />
-    <label for="email">Email</label>
-    <input id="email" name="email" type="email" required placeholder="your.email@example.com" />
-    <label for="message">Message</label>
-    <textarea id="message" name="message" required placeholder="Write your message here..."></textarea>
-    <button type="submit">Send Message</button>
+  <form action="https://formsubmit.co/aabuelawi4@email.com" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" placeholder="Your Message" required></textarea>
+    <button type="submit">Send</button>
   </form>
-</main>
-
-<footer>
-  &copy; 2025 Adam. All rights reserved.
-</footer>
-
-<script>
-  // Simple client-side form handler (demo only - no real email sent)
-  document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    alert('Thanks for reaching out! I will get back to you soon.');
-    this.reset();
-  });
-</script>
-
 </body>
+
 </html>
