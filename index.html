@@ -2,98 +2,181 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Abuu8 | Digital Creator</title>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Abuu8 | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet" />
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Outfit', sans-serif;
-    }
+    /* Fonts */
     body {
-      background: radial-gradient(circle at top left, #1a1a2e, #16213e);
-      color: #eaeaea;
-      padding: 2rem;
+      font-family: 'Inter', sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      margin: 0;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      min-height: 100vh;
+      padding: 2rem 1rem;
+      overflow-x: hidden;
+      position: relative;
+      /* Cloud pattern background */
+      background-image:
+        url('https://www.transparenttextures.com/patterns/clouds.png');
+      background-repeat: repeat;
+      background-size: 250px 150px;
     }
+
     header {
       text-align: center;
       margin-bottom: 2.5rem;
-      animation: fadeDrop 1.2s ease-in-out;
+      animation: fadeDrop 1.2s ease forwards;
+      max-width: 600px;
+      width: 100%;
     }
+
     header h1 {
-      font-size: 3.5rem;
-      color: #ffffff;
-      margin-bottom: 0.3rem;
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: 3.75rem;
+      color: #facc15;
+      margin-bottom: 0.2rem;
+      letter-spacing: 1.5px;
     }
+
     header p {
-      font-size: 1.2rem;
-      color: #a8acc9;
+      font-weight: 400;
+      font-size: 1.25rem;
+      color: #94a3b8;
+      letter-spacing: 0.8px;
+      font-style: italic;
     }
+
     .buttons {
       display: flex;
       flex-direction: column;
       gap: 1rem;
-      margin-top: 2rem;
-      width: 100%;
       max-width: 500px;
-      animation: floatIn 1.4s ease-in-out;
+      width: 100%;
+      animation: floatIn 1.4s ease forwards;
     }
+
     .buttons a {
-      background: linear-gradient(to right, #23243a, #2e2f4b);
-      color: #ffffff;
+      background: linear-gradient(90deg, #facc15, #eab308);
+      color: #0f172a;
       text-decoration: none;
-      padding: 1rem;
-      border-radius: 12px;
+      padding: 1.1rem 1.5rem;
+      border-radius: 14px;
       text-align: center;
-      border: 1px solid #454668;
-      transition: all 0.3s ease;
+      font-weight: 600;
+      font-size: 1.15rem;
+      box-shadow: 0 4px 12px rgba(234, 179, 8, 0.45);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+
     .buttons a:hover {
-      background: #3b3c5f;
-      transform: scale(1.06);
+      transform: scale(1.08);
+      box-shadow: 0 8px 24px rgba(234, 179, 8, 0.75);
+      text-decoration: underline;
     }
+
     form {
       margin-top: 3rem;
-      width: 100%;
       max-width: 500px;
+      width: 100%;
       display: flex;
       flex-direction: column;
       gap: 1rem;
-      animation: fadeDrop 1.3s ease-in-out;
+      animation: fadeDrop 1.6s ease forwards;
+      background: rgba(255 255 255 / 0.05);
+      padding: 1.8rem;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(234, 179, 8, 0.3);
+      color: #e2e8f0;
     }
-    form input, form textarea {
-      padding: 0.9rem;
+
+    form input,
+    form textarea {
+      padding: 0.9rem 1rem;
       border: none;
       border-radius: 8px;
       font-size: 1rem;
+      background: rgba(255 255 255 / 0.1);
+      color: #e2e8f0;
+      transition: background-color 0.25s ease;
     }
+
+    form input::placeholder,
+    form textarea::placeholder {
+      color: #94a3b8;
+    }
+
+    form input:focus,
+    form textarea:focus {
+      outline: 2px solid #facc15;
+      background: rgba(255 255 255 / 0.15);
+    }
+
     form button {
       padding: 1rem;
       border: none;
-      background-color: #f72585;
-      color: #fff;
-      font-size: 1rem;
-      border-radius: 8px;
+      background-color: #facc15;
+      color: #0f172a;
+      font-weight: 700;
+      font-size: 1.1rem;
+      border-radius: 10px;
       cursor: pointer;
-      transition: background-color 0.3s;
+      transition: background-color 0.3s ease;
     }
+
     form button:hover {
-      background-color: #ff4da6;
+      background-color: #eab308;
     }
+
+    .confirmation-message {
+      margin-top: 1rem;
+      font-weight: 600;
+      color: #22c55e;
+      text-align: center;
+      display: none;
+    }
+
     @keyframes fadeDrop {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
+
     @keyframes floatIn {
-      from { opacity: 0; transform: translateY(40px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 540px) {
+      header h1 {
+        font-size: 3rem;
+      }
+      header p {
+        font-size: 1rem;
+      }
+      .buttons a {
+        font-size: 1rem;
+        padding: 0.9rem 1.3rem;
+      }
     }
   </style>
 </head>
@@ -101,23 +184,55 @@
 <body>
   <header>
     <h1>Abuu8</h1>
-    <p>Creator of bold, sharp digital experiences.</p>
+    <p>Creating projects that speak for themselves.</p>
   </header>
 
   <div class="buttons">
-    <a href="https://www.youtube.com/@Abuu8" target="_blank">📺 YouTube - Abuu8</a>
-    <a href="https://www.tiktok.com/@pizzahutu" target="_blank">🎵 TikTok - pizzahutu</a>
-    <a href="https://egojourney.com" target="_blank">🧠 Clothing Brand - EgoJourney</a>
-    <a href="https://timecapsuleofbooks.com" target="_blank">📚 Ebook Store - Time Capsule of Books</a>
+    <a href="https://www.youtube.com/@Abuu8" target="_blank" rel="noopener noreferrer">▶ Watch My Channel →</a>
+    <a href="https://www.tiktok.com/@pizzahutu" target="_blank" rel="noopener noreferrer">🎵 Follow on TikTok →</a>
+    <a href="https://egojourney.com" target="_blank" rel="noopener noreferrer">🧢 Shop EgoJourney →</a>
+    <a href="https://timecapsuleofbooks.com" target="_blank" rel="noopener noreferrer">📚 Explore My Ebooks →</a>
     <a href="mailto:aabuelawi4@email.com">✉️ Email Me</a>
   </div>
 
-  <form action="https://formsubmit.co/aabuelawi4@email.com" method="POST">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Your Email" required>
-    <textarea name="message" placeholder="Your Message" required></textarea>
-    <button type="submit">Send</button>
+  <form id="contact-form" action="https://formsubmit.co/aabuelawi4@email.com" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required autocomplete="name" />
+    <input type="email" name="email" placeholder="Your Email" required autocomplete="email" />
+    <textarea name="message" placeholder="Your Message" required rows="4"></textarea>
+    <button type="submit">Send Message</button>
   </form>
+  <div class="confirmation-message" id="confirmation">Thank you! Your message has been sent.</div>
+
+  <script>
+    // Show confirmation message after form submit
+    const form = document.getElementById('contact-form');
+    const confirmation = document.getElementById('confirmation');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      // Send form data via fetch to FormSubmit.co
+      const formData = new FormData(form);
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json',
+        },
+      })
+        .then(response => {
+          if (response.ok) {
+            confirmation.style.display = 'block';
+            form.reset();
+          } else {
+            alert('Oops! There was a problem submitting your form.');
+          }
+        })
+        .catch(() => {
+          alert('Oops! There was a problem submitting your form.');
+        });
+    });
+  </script>
 </body>
 
 </html>
